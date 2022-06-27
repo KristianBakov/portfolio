@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Kristian Bakov Portfolio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -72,15 +73,32 @@
         <div class="container">
             <h3>Projects</h3>
             <hr class="custom-divider" />
-            <div class="project-container" id="projects">
+            <div class="projects-container" id="projects">
                 <!-- Use JSON data to populate project container -->
-                
+
             </div>
         </div>
         </div>
     </section>
-
     </main>
+
+    <section class="modal-bg" id="projectModal">
+        <div class="modal-container">
+            <button class="close-button" id="closeModal"><i class="fas fa-times"></i></button>
+            <h2 id="modalTitle"></h2>
+            <hr class="custom-divider">
+            <img class="modal-main-img" id="modalImg" src="./assets/bubbly.webp" />
+            <p class="modal-details" id="modalDetails"></p>
+            <ul id="modalToolsUsed"></ul>
+            <div class="link-container">
+                <a href="" class="cta-button btn" id="demoURL">Demo</a><a href="" class="cta-button btn" id="githubURL">Code</a>
+            </div>
+        </div>
+    </section>
+
     <script src="./javascript/responsivemenu.js"></script>
+    <script src="./javascript/projects.js"></script>
+    <script src="./javascript/modal.js"></script>
+    <script src="./javascript/toolicons.js"></script>
   </body>
 </html>

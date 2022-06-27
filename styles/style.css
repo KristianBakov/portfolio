@@ -6,6 +6,7 @@
   --secondary-color: #05386b;
   --secondary-color-dark: #181984;
   --secondary-color-light: #1962a1;
+  --complementary-color: #ec9f56;
 }
 
 /* General Styles */
@@ -39,7 +40,7 @@ a:hover {
 a.btn {
   display: inline-block;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   font: bold 16px "Poppins";
   text-align: center;
   background-color: transparent;
@@ -54,6 +55,10 @@ a.btn:hover {
   transition: all 0.2s ease-in;
 }
 
+button {
+  border-style: none;
+}
+
 p.dark {
   color: var(--text-color-dark);
 }
@@ -61,14 +66,18 @@ p.dark {
 section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 80px 100px;
+  padding: 80px 96px;
 }
 
+@media (max-width: 766px) {
+  section {
+    padding: 64px 16px;
+  }
+}
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100%;
 }
 
 section:not(.hero):nth-child(even) {
@@ -77,6 +86,11 @@ section:not(.hero):nth-child(even) {
 
 .flex-container {
   display: flex;
+}
+
+.fa,
+.fab {
+  margin-right: 16px;
 }
 
 /* Nav */
@@ -108,11 +122,16 @@ section:not(.hero):nth-child(even) {
     display: block;
   }
   .nav-primary li {
-    margin: 0 8px 0 8px;
+    margin: 0 8px;
   }
 }
 .hamburger {
   display: none;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Responsive Menu */
@@ -130,10 +149,8 @@ section:not(.hero):nth-child(even) {
   font: normal 20px "Poppins";
   background-color: var(--primary-color);
   color: var(--text-color-dark);
-  padding: 0;
-}
-.hero .hero-container {
-  padding: 60px 100px;
+  padding-top: 128px;
+  padding-bottom: 128px;
 }
 .hero .hero-container h1 {
   font: bolder 80px "Righteous";
@@ -142,7 +159,7 @@ section:not(.hero):nth-child(even) {
   font: bolder 55px "Righteous";
   color: var(--text-color-light);
   line-height: 1.2;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
 }
 .hero .hero-container p {
   max-width: 500px;
@@ -152,10 +169,9 @@ section:not(.hero):nth-child(even) {
 }
 .hero .nav-socials {
   font-size: 32px;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .hero .nav-socials a {
-  padding-right: 20px;
   color: var(--text-color-light);
   opacity: 1;
 }
@@ -167,15 +183,14 @@ section:not(.hero):nth-child(even) {
 @media (max-width: 766px) {
   .hero {
     font-size: 16px;
-  }
-  .hero .hero-container {
-    padding: 60px 20px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
   .hero .hero-container h1 {
-    font-size: 65px;
+    font-size: 64px;
   }
   .hero .hero-container h2 {
-    font-size: 35px;
+    font-size: 32px;
   }
 }
 /* Projects */
@@ -188,15 +203,199 @@ section:not(.hero):nth-child(even) {
     font: normal 32px "Righteous";
   }
 }
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 32px;
+}
+
+.project-container {
+  padding: 16px;
+  width: 33%;
+  height: 320px;
+}
+.project-container .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: lightgrey;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.project-container .content .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 56, 107, 0);
+  border-radius: 16px;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
+.project-container .content .overlay .project-btn {
+  cursor: pointer;
+  opacity: 1;
+  padding: 8px 16px;
+  background-color: var(--text-color-light);
+  border-radius: 24px;
+  color: var(--text-color-dark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.project-container .content .overlay .project-btn:hover {
+  opacity: 0.9;
+}
+.project-container .content:hover .overlay {
+  background-color: rgba(5, 56, 107, 0.6);
+  border-radius: 16px;
+  opacity: 1;
+}
+
+@media (max-width: 1364px) {
+  .project-container {
+    width: 50%;
+  }
+
+  .projects-content {
+    padding: 64px 32px;
+  }
+}
+@media (max-width: 760px) {
+  .project-container {
+    width: 100%;
+    height: 440px;
+  }
+}
 hr.custom-divider {
-  width: 300px;
-  margin: 20px auto;
-  background-color: #333;
-  height: 3px;
+  width: 192px;
+  margin: 16px 48px;
+  background-color: var(--secondary-color-light);
+  height: 5px;
   border: none;
 }
 
 .project-container {
   display: flex;
   justify-content: center;
+}
+.project-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+/* Modal Styles */
+.modal-bg {
+  display: none;
+}
+.modal-bg.show {
+  display: block;
+  position: fixed;
+  z-index: 10000;
+  -webkit-animation-name: modalFadeIn;
+  animation-name: modalFadeIn;
+  -webkit-animation-duration: 200ms;
+  animation-duration: 200ms;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.44);
+  overflow-y: auto;
+}
+.modal-bg.closing {
+  -webkit-animation-name: modalFadeOut;
+  animation-name: modalFadeOut;
+  -webkit-animation-duration: 200ms;
+  animation-duration: 200ms;
+}
+.modal-bg hr {
+  height: 3px;
+  margin: 16px auto;
+}
+.modal-bg h2 {
+  font-size: 55px;
+  font: normal 55px "Righteous";
+}
+.modal-bg div.modal-container {
+  position: relative;
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 40px 24px;
+  text-align: center;
+  max-width: 1140px;
+  margin: 1.75rem auto;
+}
+.modal-bg div.modal-container button.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 50px;
+  color: #56a0ec;
+  background-color: transparent;
+  cursor: pointer;
+}
+.modal-bg div.modal-container img.modal-main-img {
+  width: 80%;
+  max-width: 600px;
+}
+.modal-bg div.modal-container p.modal-details {
+  max-width: 500px;
+  margin: 20px auto;
+}
+.modal-bg div.modal-container ul#modalToolsUsed {
+  font-size: 40px;
+  display: flex;
+  max-width: 600px;
+  margin: auto;
+}
+.modal-bg div.modal-container ul#modalToolsUsed li {
+  margin: auto;
+}
+.modal-bg div.modal-container a.cta-button {
+  margin: 10px;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.modal-bg div.modal-container a.cta-button:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+@-webkit-keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes modalFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
