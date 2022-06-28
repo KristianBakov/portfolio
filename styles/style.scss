@@ -20,8 +20,8 @@
 }
 
 body {
-  font: normal 24px "Poppins", sans-serif;
-  background-color: "#FEFEFE";
+  font: normal 16px "Poppins", sans-serif;
+  background-color: var(--secondary-color);
   color: var(--text-color-dark);
 }
 
@@ -44,7 +44,7 @@ a:hover {
   opacity: 1;
 }
 
-a.btn {
+.btn {
   display: inline-block;
   border-radius: 4px;
   padding: 8px 16px;
@@ -56,7 +56,7 @@ a.btn {
   opacity: 1;
 }
 
-a.btn:hover {
+.btn:hover {
   background-color: var(--text-color-dark);
   color: var(--text-color-light);
   transition: all 0.2s ease-in;
@@ -113,7 +113,7 @@ div.smaller-container {
   }
 }
 
-section:not(.hero):nth-child(even) {
+section:not(.modal-bg):nth-child(even) {
   background-color: #f5f5f5;
 }
 
@@ -125,13 +125,11 @@ section:not(.hero):nth-child(even) {
   flex-wrap: wrap;
 }
 
-.fa,
-.fab {
-  margin-right: 16px;
-}
-
 /* Nav */
 .nav-container {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,6 +202,7 @@ section:not(.hero):nth-child(even) {
   padding-bottom: 128px;
 
   .hero-container {
+    padding-top: 90px;
     h1 {
       font: bolder 80px "Righteous";
     }
@@ -231,6 +230,7 @@ section:not(.hero):nth-child(even) {
     a {
       color: var(--text-color-light);
       opacity: 1;
+      margin-right: 16px;
     }
 
     a:hover {
@@ -390,6 +390,10 @@ hr.custom-divider {
   div.about-text {
     margin: 20px 0;
     max-width: 55%;
+  }
+
+  hr {
+    background-color: var(--text-color-dark);
   }
 }
 
@@ -554,7 +558,12 @@ section.contact-me form {
 }
 
 section.contact-me form button {
-  background-color: none;
+  background-color: var(--primary-color-dark);
+  color: var(--text-color-light);
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--text-color-dark);
+  }
 }
 
 section.contact-me form label {
@@ -597,6 +606,17 @@ section.contact-me form div.form-single div.text-area label {
   top: -15px;
 }
 
+/* Footer */
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
+  p {
+    padding: 16px;
+    text-align: center;
+  }
+}
+
 /* Modal Styles */
 
 .modal-bg {
@@ -615,7 +635,7 @@ section.contact-me form div.form-single div.text-area label {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.44);
-    overflow-y: auto;
+    overflow: auto;
   }
 
   &.closing {
@@ -665,10 +685,11 @@ section.contact-me form div.form-single div.text-area label {
       font-size: 40px;
       display: flex;
       max-width: 600px;
-      margin: auto;
+      margin: 0 auto;
+      justify-content: center;
 
       li {
-        margin: auto;
+        margin-right: 16px;
       }
     }
     a.cta-button {
