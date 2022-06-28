@@ -1,7 +1,7 @@
 [
   {
     "title": "Portfolio",
-    "demoURL": "https://shop-green.netlify.app",
+    "demoURL": "https://kristian-bakov.netlify.app",
     "gitHubURL": "https://github.com/KristianBakov/portfolio",
     "imgSrc": "./assets/portfolio.webp",
     "details": "Portfolio website made with Html5, Css3, Sass, and JavaScript. Project section is populated using AJAX.",

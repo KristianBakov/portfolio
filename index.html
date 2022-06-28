@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <script
       src="https://kit.fontawesome.com/ba92ddb58a.js"
       crossorigin="anonymous"
     ></script>
     <title>Kristian Bakov Portfolio</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -21,7 +23,7 @@
 
         <nav class="header-nav">
           <ul class="nav-primary">
-            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#aboutMe">About</a></li>
             <li><a href="#contactMe">Contact</a></li>
           </ul>
@@ -39,7 +41,7 @@
     <main>
       <!-- Start Hero Content  -->
       <section class="hero">
-        <div class="hero-container">
+        <div class="hero-container container">
           <div class="introduction">
             <p class="dark">Hello, my name is</p>
             <h1 class="dark">Kristian Bakov</h1>
@@ -80,8 +82,109 @@
         </div>
         </div>
     </section>
-    </main>
 
+    <!-- End Projects Section -->
+    <!-- Start About Me Section -->
+
+    <section class="about-me" id="aboutMe">
+        <div class="container">
+            <h3>About Me</h3>
+            <hr class="custom-divider" />
+            <div class="flex-container">
+                <div class="about-text">
+                    <p>Hi! My name is Kristian Bakov and I am a web developer based in
+                        the Southwest
+                        of England. My path
+                        towards web
+                        development is long; I was a game developer graduate and worked in the field for over three years.
+                        Eventually I started working on game UI which led me to creating responsive pages for games for multiple clients. </p>
+
+                    <p style="padding-top: 8px;"> This passion then led me to start my own web development journey.</p>
+                    <p style="padding-top: 32px; text-decoration: underline">Here are some technologies I can work with:</p>
+                    <div class="skills-icons">
+                        <i class="fab fa-html5 pdd-1">
+                            <p class="tooltip">HTML5</p>
+                        </i>
+                        <i class="fab fa-css3-alt pdd-1">
+                            <p class="tooltip">CSS3</p>
+                        </i>
+                        <i class="fab fa-js-square pdd-1">
+                            <p class="tooltip">JavaScript & jQuery</p>
+                        </i>
+                        <i class="fab fa-sass pdd-1">
+                            <p class="tooltip">SaSS</p>
+                        </i>
+                        <i class="fab fa-bootstrap pdd-1">
+                            <p class="tooltip">BootStrap</p>
+                        </i>
+                        <i class="fab fa-react pdd-1">
+                            <p class="tooltip">React.js</p>
+                        </i>
+                        <i class="fab fa-connectdevelop">
+                            <p class="tooltip">3rd Party API Integration</p>
+                        </i>
+                        <i class="fab fa-git-square  pdd-1">
+                            <p class="tooltip">git</p>
+                        </i>
+                        <i class="fab fa-github pdd-1 ">
+                            <p class="tooltip">GitHub</p>
+                        </i>
+                        <i class="fab fa-bitbucket  pdd-1">
+                            <p class="tooltip">BitBucket</p>
+                        </i>
+                        <i class="fa-solid fa-file-image">
+                            <p class="tooltip">Adobe Photoshop</p>
+                        </i>                        
+                    </div>
+                </div>
+                <div class="profile-pic-container">
+                    <img alt="Profile picture" src="assets/profile-pic.jpeg" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Me -->
+    <!-- Start of Contact Me Section -->
+    <section class="contact-me" id="contactMe">
+        <div class="container">
+            <h3 class="text-center">Contact Me</h3>
+            <hr class="custom-divider" />
+            <ul class="nav-socials flex-container">
+                <li><a href="https://www.linkedin.com/in/randy-meneses-00699b12a/"><i
+                            class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://github.com/Randym3"><i class="fab fa-github"></i></a></li>
+
+            </ul>
+            <p class="text-center">If you like what I do, let's get in touch.</p>
+            <div class="smaller-container ">
+                <form name="contact" method="POST" data-netlify="true">
+                    <div class="form-single">
+                        <label for="fullName">Your Name: </label>
+                        <input id="fullName" type="text" name="full_name" required />
+                        <div class="form-single">
+                            <label for="contactEmail">Email:</label>
+                            <input id="contactEmail" type="email" name="email" required />
+                        </div>
+                        <div class="form-single">
+                            <label for="contactSubject">Subject: </label>
+                            <input id="contactSubject" type="text" name="subject" required />
+                        </div>
+                        <div class="form-single text-area">
+                            <label for="contactMessage">Message: </label>
+                            <textarea id="contactMessage" name="message" required></textarea>
+                        </div>
+                        <button class="cta-button btn" type="submit">Send</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <p>Designed and Built by Kristian Bakov.</p>
+    </footer>
+
+    <!-- Project Modal -->
     <section class="modal-bg" id="projectModal">
         <div class="modal-container">
             <button class="close-button" id="closeModal"><i class="fas fa-times"></i></button>
@@ -91,7 +194,7 @@
             <p class="modal-details" id="modalDetails"></p>
             <ul id="modalToolsUsed"></ul>
             <div class="link-container">
-                <a href="" class="cta-button btn" id="demoURL">Demo</a><a href="" class="cta-button btn" id="githubURL">Code</a>
+                <a href="" class="cta-button btn" id="demoURL" target="_blank" rel="noopener noreferrer">Demo</a><a href="" class="cta-button btn" id="githubURL" target="_blank" rel="noopener noreferrer">Code</a>
             </div>
         </div>
     </section>
