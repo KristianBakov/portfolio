@@ -1,11 +1,12 @@
 (function () {
-  const hamburgerMenu = document.querySelector("div.hamburger");
+  const hamburgerMenu = document.getElementById("hamburger");
   const respMenuElements = document.querySelectorAll(
     "nav.header-nav, ul.nav-primary"
   );
 
   function toggleMenu(x) {
     x.classList.toggle("change");
+    console.log(respMenuElements);
   }
 
   hamburgerMenu.addEventListener("click", () => {

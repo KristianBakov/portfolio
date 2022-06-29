@@ -38,7 +38,7 @@
     "demoURL": "https://travel-balkans.netlify.app",
     "gitHubURL": "https://github.com/KristianBakov/travel-balkans",
     "imgSrc": "./assets/travel-balkans.webp",
-    "details": "SSimple website featuring some beautiful css animations and reusable flex layouts.",
+    "details": "Simple website featuring some beautiful css animations and reusable flex layouts.",
     "toolsUsed": ["html", "css"]
   },
   {

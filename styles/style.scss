@@ -125,6 +125,11 @@ section:not(.modal-bg):nth-child(even) {
   flex-wrap: wrap;
 }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 /* Nav */
 .nav-container {
   position: fixed;
@@ -139,14 +144,18 @@ section:not(.modal-bg):nth-child(even) {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 32px 64px 32px 64px;
+  padding: 24px 64px;
   background-color: var(--secondary-color);
   font-size: 16px;
+
+  a {
+    z-index: 100;
+  }
 }
 
 @media (max-width: 768px) {
   .nav-container {
-    padding: 32px;
+    padding: 16px 32px;
   }
 }
 
@@ -172,24 +181,74 @@ section:not(.modal-bg):nth-child(even) {
   }
 }
 
+/* Responsive Menu */
+
 .hamburger {
   display: none;
+  z-index: 100;
 }
 
-.stop-scrolling {
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Responsive Menu */
 @media (max-width: 768px) {
-  .nav-primary {
+  .header-nav {
     display: none;
   }
 
   .hamburger {
     display: block;
+    cursor: pointer;
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      pointer-events: none;
+      width: 35px;
+      height: 5px;
+      background-color: #eeeeee;
+      margin: 6px 0;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
   }
+
+  header nav.change.header-nav {
+    display: block;
+    text-align: center;
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    left: 0;
+    z-index: 30;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+  }
+  header nav.change.header-nav ul.change {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 264px;
+
+    li {
+      padding: 20px 0;
+    }
+  }
+}
+
+.change.hamburger .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change.hamburger .bar2 {
+  opacity: 0;
+}
+
+.change.hamburger .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 /* Hero */
@@ -393,7 +452,7 @@ hr.custom-divider {
   }
 
   hr {
-    background-color: var(--text-color-dark);
+    background-color: var(--text-color-light);
   }
 }
 
