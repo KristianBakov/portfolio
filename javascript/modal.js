@@ -17,7 +17,6 @@ async function addEventListeners() {
     projectButtons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         project = e.target.closest(".project-container");
-        console.log(project);
         openModal();
       });
     });
