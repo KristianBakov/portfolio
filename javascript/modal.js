@@ -18,13 +18,14 @@ r(function () {
 });
 
 function addEventListeners() {
-  const projectButtons = document.getElementsByClassName("project-btn");
-
-  for (let i = 0; i < projectButtons.length; i++) {
-    projectButtons[i].addEventListener("click", function (e) {
-      project = e.target.parentNode.parentNode.parentNode;
-      console.log(project);
-      openModal();
+  const projectButtons = document.querySelectorAll(".project-btn");
+  if (projectButtons.length > 0) {
+    projectButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        project = e.target.closest(".project-container");
+        console.log(project);
+        openModal();
+      });
     });
   }
 }
