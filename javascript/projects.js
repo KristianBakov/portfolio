@@ -18,16 +18,7 @@ const projectsData = [
     imgSrc: "./assets/movix.webp",
     details:
       "Simple and responsive web application that allows users to browse for movies and TV shows.",
-    toolsUsed: [
-      "html",
-      "css",
-      "javascript",
-      "react",
-      "unit-testing",
-      "api",
-      "redux",
-      "mui",
-    ],
+    toolsUsed: ["html", "css", "javascript", "react", "api", "redux", "mui"],
   },
   {
     title: "Bubbly",
