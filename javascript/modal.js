@@ -23,7 +23,6 @@ function addEventListeners() {
   for (let i = 0; i < projectButtons.length; i++) {
     projectButtons[i].addEventListener("click", function (e) {
       project = e.target.parentNode.parentNode.parentNode;
-      console.log(project);
       openModal();
     });
   }

@@ -6,7 +6,6 @@
 
   function toggleMenu(x) {
     x.classList.toggle("change");
-    console.log(respMenuElements);
   }
 
   hamburgerMenu.addEventListener("click", () => {
