@@ -9,15 +9,9 @@ const closeModalButton = document.getElementById("closeModal");
 
 let project;
 
-function r(f) {
-  /in/.test(document.readyState) ? setTimeout("r(" + f + ")", 9) : f();
-}
+addEventListeners();
 
-r(function () {
-  addEventListeners();
-});
-
-function addEventListeners() {
+async function addEventListeners() {
   console.log("After projects load");
   const projectButtons = document.querySelectorAll(".project-btn");
   if (projectButtons.length > 0) {

@@ -639,6 +639,7 @@ footer p {
 .modal-bg div.modal-container img.modal-main-img {
   width: 80%;
   max-width: 600px;
+  min-height: 320px;
 }
 .modal-bg div.modal-container p.modal-details {
   max-width: 500px;
