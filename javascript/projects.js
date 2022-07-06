@@ -14,6 +14,7 @@ async function getProjectsData() {
 }
 
 function injectProjectData(data) {
+  console.log("Projects loading");
   data.forEach((item, index) => {
     const listItem = document.createElement("div");
 
@@ -36,4 +37,5 @@ function injectProjectData(data) {
 
     projectsContainer.appendChild(listItem);
   });
+  console.log("Projects loaded");
 }

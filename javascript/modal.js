@@ -18,6 +18,7 @@ r(function () {
 });
 
 function addEventListeners() {
+  console.log("After projects load");
   const projectButtons = document.querySelectorAll(".project-btn");
   if (projectButtons.length > 0) {
     projectButtons.forEach((btn) => {
