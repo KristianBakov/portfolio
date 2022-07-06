@@ -59,7 +59,6 @@ const projectsData = [
 ];
 
 function injectProjectData(projectsData = []) {
-  console.log("Projects loading");
   projectsData.forEach((item, index) => {
     const listItem = document.createElement("div");
 
@@ -82,7 +81,6 @@ function injectProjectData(projectsData = []) {
 
     projectsContainer.appendChild(listItem);
   });
-  console.log("Projects loaded");
 }
 
 injectProjectData(projectsData);
