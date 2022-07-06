@@ -29,7 +29,7 @@ function injectProjectData(data) {
     <div class="content">
         <img src="${item.imgSrc}" alt="${item.title}" />
         <div class="overlay">
-            <a class="project-btn" id="btn">Learn more</a>
+            <button class="project-btn">Learn more</button>
         </div>
     </div>
     `;
