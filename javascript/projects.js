@@ -1,21 +1,66 @@
 const projectsContainer = document.getElementById("projects");
 
-getProjectsData();
+const projectsData = [
+  {
+    title: "Portfolio",
+    demoURL: "https://kristian-bakov.netlify.app",
+    gitHubURL: "https://github.com/KristianBakov/portfolio",
+    imgSrc: "./assets/portfolio.webp",
+    details:
+      "Portfolio website made with Html5, Css3, Sass, and JavaScript. Project section is populated using AJAX.",
+    toolsUsed: ["html", "css", "sass", "javascript"],
+  },
 
-async function getProjectsData() {
-  try {
-    const res = await fetch("../data/projectData.json");
-    const data = await res.json();
+  {
+    title: "Movix",
+    demoURL: "https://movixcatalogue.netlify.app",
+    gitHubURL: "https://github.com/KristianBakov/movix",
+    imgSrc: "./assets/movix.webp",
+    details:
+      "Simple and responsive web application that allows users to browse for movies and TV shows.",
+    toolsUsed: [
+      "html",
+      "css",
+      "javascript",
+      "react",
+      "unit-testing",
+      "api",
+      "redux",
+      "mui",
+    ],
+  },
+  {
+    title: "Bubbly",
+    demoURL: "https://bubblylondon.netlify.app",
+    gitHubURL: "https://github.com/KristianBakov/bubbly",
+    imgSrc: "./assets/bubbly.webp",
+    details:
+      "Commercial store style website which dynamically loads menu data. It is styled using Bootstrap.",
+    toolsUsed: ["html", "javascript", "css", "sass", "bootstrap"],
+  },
+  {
+    title: "Travel Balkans",
+    demoURL: "https://travel-balkans.netlify.app",
+    gitHubURL: "https://github.com/KristianBakov/travel-balkans",
+    imgSrc: "./assets/travel-balkans.webp",
+    details:
+      "Simple website featuring some beautiful css animations and reusable flex layouts.",
+    toolsUsed: ["html", "css"],
+  },
+  {
+    title: "Shop Green",
+    demoURL: "https://shop-green.netlify.app",
+    gitHubURL: "https://github.com/KristianBakov/shopgreen",
+    imgSrc: "./assets/shop-green.webp",
+    details:
+      "Updated portfolio website made with Html5, Css3, Sass, JavaScript, and Webpack. Project section is populated using AJAX.",
+    toolsUsed: ["html", "css"],
+  },
+];
 
-    injectProjectData(data);
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-function injectProjectData(data) {
+function injectProjectData(projectsData = []) {
   console.log("Projects loading");
-  data.forEach((item, index) => {
+  projectsData.forEach((item, index) => {
     const listItem = document.createElement("div");
 
     listItem.setAttribute("data-index", index);
@@ -39,3 +84,5 @@ function injectProjectData(data) {
   });
   console.log("Projects loaded");
 }
+
+injectProjectData(projectsData);
