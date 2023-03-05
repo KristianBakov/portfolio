@@ -21,6 +21,15 @@ const projectsData = [
     toolsUsed: ["html", "css", "javascript", "react", "api", "redux", "mui"],
   },
   {
+    title: "Quiz It",
+    demoURL: "https://quiz-it-react-app.netlify.app",
+    gitHubURL: "https://github.com/KristianBakov/quiz-it",
+    imgSrc: "./assets/quiz-it.webp",
+    details:
+      "Simple web application where users can complete trivia quizzes the way they want to.",
+    toolsUsed: ["html", "css", "javascript", "react", "api"],
+  },
+  {
     title: "Bubbly",
     demoURL: "https://bubblylondon.netlify.app",
     gitHubURL: "https://github.com/KristianBakov/bubbly",
