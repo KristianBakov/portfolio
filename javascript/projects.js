@@ -27,7 +27,7 @@ const projectsData = [
     imgSrc: "./assets/quiz-it.webp",
     details:
       "Simple web application where users can complete trivia quizzes the way they want to.",
-    toolsUsed: ["html", "css", "javascript", "react", "api"],
+    toolsUsed: ["html", "css", "react", "api", "typescript"],
   },
   {
     title: "Bubbly",
@@ -58,17 +58,12 @@ const projectsData = [
   },
 ];
 
-function injectProjectData(projectsData = []) {
-  projectsData.forEach((item, index) => {
+function populateProjectData(projectsData = []) {
+  projectsData.forEach((item) => {
     const listItem = document.createElement("div");
-
-    listItem.setAttribute("data-index", index);
-    listItem.setAttribute("data-project-title", item.title);
-    listItem.setAttribute("data-project-img-src", item.imgSrc);
-    listItem.setAttribute("data-project-demo-url", item.demoURL);
-    listItem.setAttribute("data-project-github-url", item.gitHubURL);
-    listItem.setAttribute("data-project-details", item.details);
-    listItem.setAttribute("data-project-tools-used", item.toolsUsed);
+    Object.entries(item).forEach(([key, value]) => {
+      listItem.setAttribute(`data-${key}`, value);
+    });
     listItem.classList.add("project-container");
     listItem.innerHTML = `
     <div class="content">
@@ -83,4 +78,4 @@ function injectProjectData(projectsData = []) {
   });
 }
 
-injectProjectData(projectsData);
+populateProjectData(projectsData);

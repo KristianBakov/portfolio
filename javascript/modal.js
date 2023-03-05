@@ -24,17 +24,17 @@ async function addEventListeners() {
 }
 
 function openModal() {
-  const toolsUsed = project.getAttribute("data-project-tools-used").split(",");
+  const toolsUsed = project.dataset.toolsused.split(",");
   registerCloseModalEvents();
 
-  modalTitle.innerHTML = project.getAttribute("data-project-title");
-  modalImg.src = project.getAttribute("data-project-img-src");
-  modalImg.alt = project.getAttribute("data-project-title");
-  modalDetails.innerHTML = project.getAttribute("data-project-details");
-  modalDemoURL.href = project.getAttribute("data-project-demo-url");
-  modalGithubURL.href = project.getAttribute("data-project-github-url");
+  modalTitle.innerHTML = project.dataset.title;
+  modalImg.src = project.dataset.imgsrc;
+  modalImg.alt = project.dataset.title;
+  modalDetails.innerHTML = project.dataset.details;
+  modalDemoURL.href = project.dataset.demourl;
+  modalGithubURL.href = project.dataset.githuburl;
   toolsUsed.forEach(
-    (cur) => (modalToolsUsed.innerHTML += `<li> ${getToolIcon(cur)}</li>`)
+    (cur) => (modalToolsUsed.innerHTML += `<li>${toolIcons[cur]}</li>`)
   );
 
   modal.classList.add("show");
