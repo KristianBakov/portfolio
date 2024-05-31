@@ -13,4 +13,6 @@ const toolIcons = {
   wordpress: '<i class="fab fa-wordpress" title="wordpress"></i>',
   node: '<i class="fab fa-node-js" title="node.js"></i>',
   sass: '<i class="fab fa-sass" title="sass"></i>',
+  sql: '<i class="fas fa-database" title="sql"></i>',
+  dotnet: '<i class="fa-solid fa-laptop-code" title="dotnet">',
 };
